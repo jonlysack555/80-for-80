@@ -11,6 +11,26 @@ pubnub.subscribe({
 
 var pubList;
 var pubTotal;
+var perDone;
+
+document.getElementById("progress").addEventListener("mouseover", showIt);
+
+function showIt() {
+  if (document.getElementById("progress").value == 100) {
+    document.getElementById("labelled").style.left = "290px";
+  } else {
+    document.getElementById("labelled").style.left = eval((1.75*(document.getElementById("progress").value))+110) + "px";
+  }
+  document.getElementById("labelled").innerHTML = document.getElementById("progress").value + "%";
+  console.log("percent");
+}
+
+document.getElementById("progress").addEventListener("mouseout", hideIt);
+
+function hideIt() {
+  document.getElementById("labelled").innerHTML = "";
+  console.log("percent off");
+}
 
 pubnub.getUser({
   userId: "theList",
@@ -33,13 +53,19 @@ pubnub.getUser({
     if (response.data.custom.tot == undefined || response.data.custom.tot == "") {
       var pubRemain = "80kms Left";
       document.getElementById('total').innerHTML = pubRemain;
+      perDone = 0;
+      document.getElementById("progress").value = perDone;
     } else if (response.data.custom.tot <= 0) {
       console.log("we got him");
-      var pubRemain  = "Goal completed! " + eval(-1*response.data.custom.tot) + "kms over our goal.";
+      var pubRemain  = eval(-1*response.data.custom.tot) + "kms over our goal! Goal completed!";
       document.getElementById('total').innerHTML = pubRemain;
+      perDone = 100;
+      document.getElementById("progress").value = perDone;
     } else {
       var pubRemain = response.data.custom.tot + "kms Left";
       document.getElementById('total').innerHTML = pubRemain;
+      perDone = (1-(response.data.custom.tot/80))*100;
+      document.getElementById("progress").value = perDone;
     }
   }
 );
@@ -49,11 +75,20 @@ updateTotal = function(distance){
   console.log(typeof total)
   total = parseFloat(total);
   console.log(total);
-  total -= distance;
-  pubTotal = total;
-  if (total <= 0) {
-    total = "Goal completed! " + eval(-1*total) + "kms over our goal.";
+  if ((document.getElementById('total').innerHTML).includes("Goal completed")) {
+    total += distance;
+    total = total * -1;
   } else {
+    total -= distance;
+  }
+  pubTotal = total;
+  if (total <= 0 || (document.getElementById('total').innerHTML).includes("Goal completed")) {
+    total = eval(-1*total) + "kms over our goal! Goal completed!";
+    perDone = 100;
+    document.getElementById("progress").value = perDone;
+  } else {
+    perDone = (1-(total/80))*100;
+    document.getElementById("progress").value = perDone;
     total = "" + total + "kms Left";
   }
   document.getElementById('total').innerHTML = total;

@@ -1,0 +1,113 @@
+html {
+    background: url("https://live.staticflickr.com/16/21499884_a920dc84ce_z.jpg") no-repeat center fixed;
+    background-size: cover;
+}
+
+#total {
+  width: 100%;
+  text-align: center;
+  font-size: 20px;
+}
+
+#head {
+  color: black;
+  position: absolute;
+  left: 600px;
+  font-size: 72px;
+  top: -30px;
+}
+
+#userDiv {
+  background-color: #5d5d5d;
+  width: 600px;
+  height: 600px;
+  border-radius: 40px;
+  position: absolute;
+  left: 450px;
+  top: 100px;
+}
+
+#fname {
+  position: relative;
+  top: 35px;
+  left: 120px;
+}
+
+#activity {
+  position: relative;
+  top: 35px;
+  left: 120px;
+}
+
+#distance {
+  position: relative;
+  top: 35px;
+  left: 120px;
+}
+
+#submit {
+  position: relative;
+  top: 40px;
+  left: 270px;
+}
+
+#list {
+  position: relative;
+  top: 50px;
+  left: 105px;
+  width: 350px;
+  height: 350px;
+  overflow-y: scroll;
+}
+
+progress {
+  width: 400px;
+  height: 30px;
+  display: hidden;
+  background: #5d5d5d;
+  text-align: center;
+  position: relative;
+  left: 100px;
+}
+
+label {
+  position: absolute;
+  top: 68px;
+  left: 110px;
+  z-index: 5;
+}
+
+progress {
+  color: linear-gradient(to right, blue, green);
+}
+
+/* progress::-webkit-progress-value {
+  background: lightblue;
+  border-radius: 15px;
+  width: 400px;
+  height: 30px;
+}
+
+progress::-moz-progress-bar {
+  background: lightcolor;
+  border-radius: 15px;
+  width: 400px;
+  height: 30px;
+} */
+
+progress::-webkit-progress-value {
+  background: linear-gradient(to right, blue, green);
+  border-radius: 15px;
+  width: 400px;
+  height: 30px;
+  border: solid;
+  border-width: 2px;
+  border-color: linear-gradient(to right, blue, green);
+}
+
+progress::-webkit-progress-bar {
+  /* background: grey; */
+  border-radius: 15px;
+  width: 400px;
+  height: 30px;
+}

@@ -1,10 +1,14 @@
 <html>
   <body>
     <head>
-      <p> 80 for 80 </p>
+      <link rel="stylesheet" href="test.css">
+      <title> 80 for 80 </title>
+      <h1 id="head"> 80 for 80 </h1>
     </head>
-    <div>
+    <div id="userDiv">
       <p id='total'> 80kms Left </p>
+      <label id="labelled" for="progress"></label>
+      <progress id="progress" min="0" max="100" value="0"></progress>
       <form>
         <select type = "text" id = fname name= input>
           <option value="none" selected disabled hidden>First Name</option>
