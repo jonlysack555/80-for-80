@@ -3,58 +3,32 @@
     <head>
       <link rel="stylesheet" href="test.css">
       <title> 80 for 80 </title>
-      <h1 id="head"> 80 for 80 </h1>
     </head>
     <div id="userDiv">
+      <h1 id="head"> 80 for 80 </h1>
       <p id='total'> 80kms Left </p>
       <label id="labelled" for="progress"></label>
       <progress id="progress" min="0" max="100" value="0"></progress>
-      <form>
-        <select type = "text" id = fname name= input>
-          <option value="none" selected disabled hidden>First Name</option>
-          <option value="Grandpa">Grandpa</option>
-          <option value="Grandma">Grandma</option>
-          <option value="Jenny">Jenny</option>
-          <option value="Brett">Brett</option>
-          <option value="Cole">Cole</option>
-          <option value="Megan">Megan</option>
-          <option value="Jane">Jane</option>
-          <option value="Mark (Jane)">Mark (Jane)</option>
-          <option value="Emma">Emma</option>
-          <option value="Ethan">Ethan</option>
-          <option value="Ruby">Ruby</option>
-          <option value="Mora">Mora</option>
-          <option value="James">James</option>
-          <option value="Ben">Ben</option>
-          <option value="Ben's gf?">Ben's gf?</option>
-          <option value="Joe">Joe</option>
-          <option value="John">John</option>
-          <option value="Lisa">Lisa</option>
-          <option value="Dave">Dave</option>
-          <option value="Anna">Anna</option>
-          <option value="Mark (Anna)">Mark (Anna)</option>
-          <option value="Daniel">Daniel</option>
-          <option value="Nicole">Nicole</option>
-          <option value="Mark">Mark</option>
-          <option value="Julie">Julie</option>
-          <option value="Jonathan">Jonathan</option>
-          <option value="Ella">Ella</option>
-        </select>
-        <select type = "text"  id = activity name=input>
-          <option value="none" selected disabled hidden>Activity</option>
-          <option value="Running">Running</option>
-          <option value="Walking">Walking</option>
-          <option value="Cycling">Cycling</option>
-          <option value="Skiing">Skiing</option>
-          <option value="Swimming">Swimming</option>
-        </select>
-        <input type = "number" min="0" placeholder = "Distance (km)" id = distance name= input> </input>
-      </form>
+      <div id="submission">
+        <form>
+          <input type = "text" id = fname placeholder="First Name" name= input> </input>
+          <select type = "text"  id = activity name=input>
+            <option value="none" selected disabled hidden>Activity</option>
+            <option value="Running">Running</option>
+            <option value="Walking">Walking</option>
+            <option value="Cycling">Cycling</option>
+            <option value="Skiing">Skiing</option>
+            <option value="Swimming">Swimming</option>
+          </select>
+          <input type = "number" min="0" placeholder = "Distance (km)" id = distance name= input> </input>
+        </form>
         <button id = 'submit'>Submit!</button>
-
+      </div>
       <ul id= 'list'>
 
       </ul>
+      <p id="vertSub">S<br>U<br>B<br>M<br>I<br>S<br>S<br>I<br>O<br>N</p>
+      <p id="vertLog">L<br>O<br>G</p>
   <body>
   <script src="https://cdn.pubnub.com/sdk/javascript/pubnub.4.27.5.js"></script>
   <script src='test.js'> </script>

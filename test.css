@@ -6,73 +6,127 @@ html {
 #total {
   width: 100%;
   text-align: center;
-  font-size: 20px;
+  font-size: 25px;
+  position: relative;
+  top: 80px;
+  font-weight: bolder;
 }
 
 #head {
-  color: black;
+  color: #e3f7ff;
   position: absolute;
-  left: 600px;
+  left: 170px;
   font-size: 72px;
-  top: -30px;
+  top: -40px;
+  opacity: 0.85;
 }
 
 #userDiv {
-  background-color: #5d5d5d;
+  background-color: #006994;
   width: 600px;
-  height: 600px;
+  height: 680px;
   border-radius: 40px;
   position: absolute;
   left: 450px;
-  top: 100px;
+  top: 20px;
+  opacity: 0.90;
 }
 
 #fname {
   position: relative;
-  top: 35px;
-  left: 120px;
+  top: 15px;
+  left: 40px;
+  height: 25px;
 }
 
 #activity {
   position: relative;
-  top: 35px;
-  left: 120px;
+  top: 15px;
+  left: 40px;
+  height: 25px;
 }
 
 #distance {
   position: relative;
-  top: 35px;
-  left: 120px;
+  top: 15px;
+  left: 40px;
+  height: 25px;
+}
+
+#submission {
+  border: solid;
+  border-color: #e3f7ff;
+  border-width: 5px;
+  height: 100px;
+  width: 500px;
+  position: absolute;
+  left: 50px;
+  top: 200px;
+  border-radius: 40px;
 }
 
 #submit {
   position: relative;
-  top: 40px;
-  left: 270px;
+  top: 10px;
+  left: 200px;
+  border: solid;
+  border-width: 1px;
+  border-radius: 20px;
+  height: 40px;
+  width: 80px;
+  background-color: green;
+  opacity: 0.85;
+}
+
+#submit:hover {
+  opacity: 2.0;
 }
 
 #list {
   position: relative;
-  top: 50px;
+  top: 200px;
   left: 105px;
   width: 350px;
   height: 350px;
   overflow-y: scroll;
 }
 
+#vertSub {
+  position: absolute;
+  width: 50px;
+  height: 200px;
+  left: 55px;
+  top: 320px;
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+}
+
+#vertLog {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  left: 515px;
+  top: 420px;
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+}
+
 progress {
   width: 400px;
   height: 30px;
   display: hidden;
-  background: #5d5d5d;
+  background: #006994;
   text-align: center;
   position: relative;
+  top: 70px;
   left: 100px;
 }
 
 label {
   position: absolute;
-  top: 68px;
+  top: 154px;
   left: 110px;
   z-index: 5;
 }
