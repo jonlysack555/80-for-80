@@ -17,7 +17,7 @@ html {
   position: absolute;
   left: 170px;
   font-size: 72px;
-  top: -40px;
+  top: -20px;
   opacity: 0.85;
 }
 
@@ -84,10 +84,10 @@ html {
 
 #list {
   position: relative;
-  top: 200px;
+  top: 230px;
   left: 105px;
   width: 350px;
-  height: 350px;
+  height: 320px;
   overflow-y: scroll;
 }
 
@@ -96,9 +96,65 @@ html {
   width: 50px;
   height: 200px;
   left: 55px;
-  top: 320px;
+  top: 340px;
   font-size: 25px;
   font-weight: bold;
+  text-align: center;
+}
+
+#logoOne {
+  position: absolute;
+  left: 30px;
+  top: 10px;
+  border-radius: 20px;
+  background-color: white;
+  width: 110px;
+  height: 120px;
+  overflow: hidden;
+  border: solid;
+  border-width: 2px;
+}
+
+#logoTwo {
+  position: absolute;
+  right: 30px;
+  top: 10px;
+  border-radius: 20px;
+  background-color: white;
+  width: 110px;
+  height: 120px;
+  overflow: hidden;
+  border: solid;
+  border-width: 2px;
+}
+
+#logoOnePic {
+  position: relative;
+  left: -40px;
+  top: -25px;
+  width: 150%;
+  height: 180%;
+}
+
+#logoTwoPic {
+  position: relative;
+  left: -40px;
+  top: -25px;
+  width: 150%;
+  height: 180%;
+}
+
+#bib {
+  position: absolute;
+  top: 297px;
+  width: 600;
+  text-align: center;
+}
+
+#email {
+  position: absolute;
+  top: 315px;
+  width: 600;
   text-align: center;
 }
 
@@ -107,7 +163,7 @@ html {
   width: 50px;
   height: 50px;
   left: 515px;
-  top: 420px;
+  top: 440px;
   font-size: 25px;
   font-weight: bold;
   text-align: center;
