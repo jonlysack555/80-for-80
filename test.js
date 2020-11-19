@@ -1,3 +1,5 @@
+document.getElementById("userDiv").style.left = (screen.width-600)/2;
+
 pubnub = new PubNub({
   publishKey: "pub-c-8bb55289-ec2d-4e9c-9021-5ee02541074b",
   subscribeKey: "sub-c-727ddb38-25e4-11eb-862a-82af91a3b28d",
@@ -57,7 +59,7 @@ pubnub.getUser({
       document.getElementById("progress").value = perDone;
     } else if (response.data.custom.tot <= 0) {
       console.log("we got him");
-      var pubRemain  = (eval(-1*response.data.custom.tot)).toFixed(2) + "kms over our goal! Goal completed!";
+      var pubRemain  = (eval(-1*response.data.custom.tot)).toFixed(2) + "kms over our goal!";
       document.getElementById('total').innerHTML = pubRemain;
       perDone = 100;
       document.getElementById("progress").value = perDone;
@@ -75,15 +77,15 @@ updateTotal = function(distance){
   console.log(typeof total)
   total = parseFloat(total);
   console.log(total);
-  if ((document.getElementById('total').innerHTML).includes("Goal completed")) {
+  if ((document.getElementById('total').innerHTML).includes("over our")) {
     total += distance;
     total = total * -1;
   } else {
     total -= distance;
   }
   pubTotal = total;
-  if (total <= 0 || (document.getElementById('total').innerHTML).includes("Goal completed")) {
-    total = (eval(-1*total)).toFixed(2) + "kms over our goal! Goal completed!";
+  if (total <= 0 || (document.getElementById('total').innerHTML).includes("over our")) {
+    total = (eval(-1*total)).toFixed(2) + "kms over our goal!";
     perDone = 100;
     document.getElementById("progress").value = perDone;
   } else {
