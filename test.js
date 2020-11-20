@@ -1,4 +1,6 @@
-document.getElementById("userDiv").style.left = (screen.width-600)/2;
+document.getElementById("userDiv").style.width = "600px";
+document.getElementById("userDiv").style.left = (screen.width-(parseInt(document.getElementById("userDiv").style.width)))/2;
+console.log(document.getElementById("userDiv").style.width);
 
 pubnub = new PubNub({
   publishKey: "pub-c-8bb55289-ec2d-4e9c-9021-5ee02541074b",
@@ -53,18 +55,18 @@ pubnub.getUser({
       addElementToList(i);
     }
     if (response.data.custom.tot == undefined || response.data.custom.tot == "") {
-      var pubRemain = "80kms Left";
+      var pubRemain = "80km Left";
       document.getElementById('total').innerHTML = pubRemain;
       perDone = 0;
       document.getElementById("progress").value = perDone;
     } else if (response.data.custom.tot <= 0) {
       console.log("we got him");
-      var pubRemain  = (eval(-1*response.data.custom.tot)).toFixed(2) + "kms over our goal!";
+      var pubRemain  = (eval(-1*response.data.custom.tot)).toFixed(2) + "km over our 80km goal!";
       document.getElementById('total').innerHTML = pubRemain;
       perDone = 100;
       document.getElementById("progress").value = perDone;
     } else {
-      var pubRemain = (response.data.custom.tot).toFixed(2) + "kms Left";
+      var pubRemain = (response.data.custom.tot).toFixed(2) + "km Left";
       document.getElementById('total').innerHTML = pubRemain;
       perDone = (1-(response.data.custom.tot/80))*100;
       document.getElementById("progress").value = perDone;
@@ -85,13 +87,13 @@ updateTotal = function(distance){
   }
   pubTotal = total;
   if (total <= 0 || (document.getElementById('total').innerHTML).includes("over our")) {
-    total = (eval(-1*total)).toFixed(2) + "kms over our goal!";
+    total = (eval(-1*total)).toFixed(2) + "km over our 80km goal!";
     perDone = 100;
     document.getElementById("progress").value = perDone;
   } else {
     perDone = (1-(total/80))*100;
     document.getElementById("progress").value = perDone;
-    total = "" + total.toFixed(2) + "kms Left";
+    total = "" + total.toFixed(2) + "km Left";
   }
   document.getElementById('total').innerHTML = total;
 }
@@ -115,7 +117,7 @@ addElementToList = function(newText){
 
 document.getElementById('submit').addEventListener('click', function(){
   if (inputs[0].value != "" && inputs[1].value != "" && inputs[2].value != "" && inputs[0].value != null && inputs[1].value != null && inputs[2].value != null) {
-    newText = "" + ((inputs[0].value).toLowerCase()).charAt(0).toUpperCase() + ((inputs[0].value).toLowerCase()).slice(1) + " completed " + inputs[2].value + "kms while " + (inputs[1].value).toLowerCase() + "!\n";
+    newText = "" + ((inputs[0].value).toLowerCase()).charAt(0).toUpperCase() + ((inputs[0].value).toLowerCase()).slice(1) + " completed " + inputs[2].value + "km while " + (inputs[1].value).toLowerCase() + "!\n";
     addElementToList(newText);
     textNodesText = [];
     for (i of document.getElementById('list').children){
