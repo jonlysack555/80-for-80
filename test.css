@@ -8,7 +8,7 @@ html {
   text-align: center;
   font-size: 25px;
   position: relative;
-  top: 80px;
+  top: 110px;
   font-weight: bolder;
   z-index: 10;
 }
@@ -24,12 +24,14 @@ html {
 
 #userDiv {
   background-color: #006994;
-  margin: 10px 30%;
-  width: 40%;
+  margin: auto;
+  width: 600px;
   height: 680px;
   border-radius: 40px;
-  position: absolute;
+  position: relative;
+  /* position: absolute;
   top: 20px;
+  left: 0px; */
   opacity: 0.90;
 }
 
@@ -85,7 +87,7 @@ html {
 
 #list {
   position: relative;
-  top: 230px;
+  top: 255px;
   left: 105px;
   width: 350px;
   height: 320px;
@@ -177,7 +179,7 @@ progress {
   background: #006994;
   text-align: center;
   position: relative;
-  top: 70px;
+  top: 95px;
   left: 100px;
 }
 
