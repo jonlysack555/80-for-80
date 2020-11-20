@@ -9,6 +9,37 @@ pubnub.subscribe({
   withPresence: true
 });
 
+pubnub.addListener({
+	message: function(event) {
+      if (JSON.parse(event.message)[2] == true) {
+        console.log("new entry");
+        pubList = JSON.parse(JSON.parse(event.message)[0]);
+        console.log(pubList);
+        document.getElementById('list').innerHTML = "";
+        for (i of pubList){
+          addElementToList(i);
+        }
+        if (JSON.parse(event.message)[1] == undefined || JSON.parse(event.message)[1] == "") {
+          var pubRemain = "80km Left";
+          document.getElementById('total').innerHTML = pubRemain;
+          perDone = 0;
+          document.getElementById("progress").value = perDone;
+        } else if (JSON.parse(event.message)[1] <= 0) {
+          console.log("we got him");
+          var pubRemain  = (eval(-1*(JSON.parse(event.message)[1]))).toFixed(2) + "km over our 80km goal!";
+          document.getElementById('total').innerHTML = pubRemain;
+          perDone = 100;
+          document.getElementById("progress").value = perDone;
+        } else {
+          var pubRemain = (JSON.parse(event.message)[1]).toFixed(2) + "km Left";
+          document.getElementById('total').innerHTML = pubRemain;
+          perDone = (1-((JSON.parse(event.message)[1])/80))*100;
+          document.getElementById("progress").value = perDone;
+        }
+      }
+  }
+});
+
 var pubList;
 var pubTotal;
 var perDone;
@@ -124,6 +155,10 @@ document.getElementById('submit').addEventListener('click', function(){
     for(i of inputs){
       i.value = "";
     }
+    pubnub.publish({
+		    channel : "users",
+		    message : JSON.stringify([JSON.stringify(textNodesText), pubTotal, true])
+	  });
     pubnub.updateUser({
       id: 'theList',
       name: "theName",
