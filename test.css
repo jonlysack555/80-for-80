@@ -24,19 +24,13 @@ html {
 
 #userDiv {
   background-color: #006994;
-  width: 600px;
+  margin: 10px 30%;
+  width: 40%;
   height: 680px;
   border-radius: 40px;
   position: absolute;
   top: 20px;
   opacity: 0.90;
-}
-
-@media (max-width: 1200px) {
-  /* CSS that should be displayed if width is equal to or less than 800px goes here */
-  #userDiv {
-    left: 20px;
-  }
 }
 
 #fname {

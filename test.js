@@ -1,7 +1,3 @@
-document.getElementById("userDiv").style.width = "600px";
-document.getElementById("userDiv").style.left = (screen.width-(parseInt(document.getElementById("userDiv").style.width)))/2;
-console.log(document.getElementById("userDiv").style.width);
-
 pubnub = new PubNub({
   publishKey: "pub-c-8bb55289-ec2d-4e9c-9021-5ee02541074b",
   subscribeKey: "sub-c-727ddb38-25e4-11eb-862a-82af91a3b28d",
