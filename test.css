@@ -32,6 +32,13 @@ html {
   opacity: 0.90;
 }
 
+@media (max-width: 1200px) {
+  /* CSS that should be displayed if width is equal to or less than 800px goes here */
+  #userDiv {
+    left: 20px;
+  }
+}
+
 #fname {
   position: relative;
   top: 15px;
